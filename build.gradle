@@ -1,0 +1,62 @@
+plugins {
+    id 'org.springframework.boot' version '2.3.4.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'java'
+}
+
+group = 'com.xeathen'
+version = '1.0.0'
+sourceCompatibility = '15'
+
+configure([
+        project('example-module')
+]) {
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'java'
+
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter'
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+        testImplementation('org.springframework.boot:spring-boot-starter-test')
+
+        implementation 'com.google.code.gson:gson:2.8.6'
+        implementation("com.squareup.okhttp3:okhttp:4.9.0")
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
+//allprojects {
+//    apply plugin: 'org.springframework.boot'
+//    apply plugin: 'io.spring.dependency-management'
+//    apply plugin: 'java'
+//
+//
+//    repositories {
+//        mavenLocal()
+//        mavenCentral()
+//    }
+//
+//
+//    dependencies {
+//        implementation 'org.springframework.boot:spring-boot-starter'
+//        implementation 'org.springframework.boot:spring-boot-starter-web'
+//        testImplementation('org.springframework.boot:spring-boot-starter-test')
+//
+//        implementation 'com.google.code.gson:gson:2.8.6'
+//        implementation("com.squareup.okhttp3:okhttp:4.9.0")
+//    }
+//
+//    test {
+//        useJUnitPlatform()
+//    }
+//}
