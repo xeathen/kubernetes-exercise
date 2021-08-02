@@ -1,3 +1,4 @@
 //rootProject.name = 'kubernetes-exercise'
 include 'example-module'
+include 'pod-info-provider'
 
